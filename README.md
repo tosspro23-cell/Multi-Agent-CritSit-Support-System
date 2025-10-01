@@ -109,10 +109,11 @@ flowchart TD
     F --> H
     G --> H
 
-    H --> I[👤 Human Decision & Approval]
+    H --> I[Human Decision & Approval]
 
-    I -->|Approved| J[Final Execution (Escalation / Updates / Notes)]
-    I -->|Not Approved| K[Revise / Retry Workflow]
+    I -->|Approved| J["Final Execution - Escalation Updates Notes"]
+    I -->|Not Approved| K[Revise or Retry Workflow]
+
 ```
 
 ---
@@ -124,4 +125,3 @@ flowchart TD
 * **No fully autonomous escalation or customer communication is performed.**
 
 
-要不要我再帮你写一个 **应用场景的具体示例**（比如一个实际 case，从 snapshot → advisor → resourcing → exec comm → handover → human approval → final outcome 的全过程）？
