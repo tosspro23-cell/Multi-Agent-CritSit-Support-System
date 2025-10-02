@@ -125,3 +125,108 @@ flowchart TD
 * **No fully autonomous escalation or customer communication is performed.**
 
 
+
+---
+
+## 🔥 Real-World Example: Urgent Security Incident Case
+
+**Case Background**
+A **Sev A urgent security incident** is reported in Dynamics CRM.
+
+* **Customer**: A global financial services company.
+* **Impact**: Security vulnerability in a critical workload causing service disruptions.
+* **Customer Pressure**: Executives escalating urgency, demanding immediate mitigation and regular updates.
+
+---
+
+### ⚡ End-to-End Multi-Agent Collaboration
+
+1. **Background Retrieval**
+
+   * Copilot fetches **case background** directly from **Dynamics CRM**.
+   * Includes: case description, customer details, historical actions, initial severity.
+
+2. **Snapshot Retrieval (Teams Chat)**
+
+   * System collects the **latest timeline, actions, blockers, and owners** from the Teams incident war room chat.
+   * This becomes the **“live case snapshot”** forming shared context for all agents.
+
+3. **CritSit Advisor Agent**
+
+   * Reviews case background + snapshot.
+   * Generates an **actionable playbook**:
+
+     * Immediate containment steps.
+     * Long-term mitigation plan.
+     * Risk assessment & customer comms guidance.
+   * Detects a **resource gap**: additional engineers needed.
+
+4. **CritSit Resourcing Agent**
+
+   * Escalates to **Duty Manager** for additional resource allocation.
+   * Prepares escalation emails, tracks engineer assignment, ensures staffing coverage.
+
+5. **Wiki Agent**
+
+   * Confirms escalation rules & SLA policies.
+   * Provides compliance references for urgent security incident handling.
+
+6. **Executive Communication Agent**
+
+   * Drafts a **4-part structured update** for executives:
+
+     1. Current Status
+     2. Customer Impact
+     3. Action Plan
+     4. Next Steps
+   * Tailors tone/style for **different VIP stakeholders** (CIO, VP Security, etc.).
+
+7. **KYC Agent**
+
+   * Supplements updates with **customer-specific insights**:
+
+     * Business criticality of affected systems.
+     * Past security incidents.
+     * Known executive sensitivities.
+
+8. **Handover Agent**
+
+   * Creates **structured handover notes**:
+
+     * Case summary.
+     * Actions completed.
+     * Pending work.
+     * Owners & next checkpoints.
+
+9. **Human-in-the-Loop Control**
+
+   * At every critical stage (advisor recommendations, resource escalation, executive updates), the **incident manager reviews and approves** before execution.
+   * Ensures **human oversight and accountability**.
+
+---
+
+### 🌟 Why This Matters
+
+* **Shared Context**: Agents consume the same Dynamics + Teams data.
+* **Specialization**: Each agent focuses on one expertise (advisory, resourcing, comms, policy, customer insights, handover).
+* **Safety & Control**: No fully autonomous execution—**final decisions are made by humans**.
+* **Impact**: Faster coordination, higher-quality comms, reduced risk, and better customer confidence.
+
+---
+
+### 📊 Multi-Agent Workflow Diagram
+
+```mermaid
+flowchart TD
+    A[Case Background from Dynamics CRM] --> B[Snapshot Retrieval from Teams Chat]
+    B --> C[CritSit Advisor Agent: Playbook + Resource Gap]
+    C --> D[CritSit Resourcing Agent: Escalation to Duty Manager]
+    C --> E[Executive Communication Agent: 4-Part Update]
+    C --> F[Wiki Agent: Escalation Rules & SLA Guidance]
+    D --> E
+    E --> G[KYC Agent: Customer Insights & Past Incidents]
+    G --> H[Handover Agent: Structured Notes]
+    H --> I[Human-in-the-Loop Approval]
+    I --> J[Final Execution: Updates Sent, Resources Deployed, Notes Shared]
+```
+
